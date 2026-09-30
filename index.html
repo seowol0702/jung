@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0077BE">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="우리 회사가 받을 수 있는 고용지원금, 최대 5,000만원까지 1분만에 무료 조회. 로그인·서류·비용 없이 이름과 연락처만 남기면 고용이음 전문가가 직접 안내드립니다.">
+<meta property="og:title" content="고용이음 | 최대 5,000만원, 1분 무료 조회">
+<meta property="og:description" content="놓치고 있는 고용지원금, 1분 만에 무료로 확인하세요.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://goyongeeum.kr/">
+<title>고용이음 | 최대 5,000만원 · 1분 무료 조회</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ============================================================
+   Reset · Base
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  font-size:16px;
+}
+body{
+  font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgun Gothic',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:#0F172A;
+  background:#fff;
+  line-height:1.65;
+  word-break:keep-all;
+  font-weight:450;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  padding-bottom:84px;   /* 플로팅 CTA 영역 확보 */
+}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;-webkit-appearance:none}
+ul,ol{list-style:none}
+input,select,textarea{font-family:inherit;font-size:16px}  /* iOS 자동확대 방지 */
+
+/* ============================================================
+   Design Tokens
+============================================================ */
+:root{
+  --blue:#0077BE;
+  --blue-dk:#005F96;
+  --blue-lt:#3FA0D9;
+  --green:#3FA030;
+  --green-lt:#7ABD34;
+  --text:#0F172A;
+  --text-sub:#475569;
+  --text-mute:#64748B;
+  --bg:#fff;
+  --bg-soft:#F7FAFC;
+  --bg-tint:#EEF5FC;
+  --bg-green-tint:#F0F8EC;
+  --line:#E2E8F0;
+  --line-soft:#EFF3F8;
+  --danger:#DC2626;
+  --shadow-sm:0 2px 8px rgba(15,23,42,.06);
+  --shadow-md:0 8px 24px rgba(0,119,190,.12);
+  --shadow-lg:0 14px 32px rgba(0,119,190,.28);
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:20px;
+  --radius-xl:24px;
+}
+
+/* ============================================================
+   Layout
+============================================================ */
+.container{width:100%;max-width:560px;margin:0 auto;padding:0 20px}
+@media (min-width:768px){.container{max-width:720px;padding:0 32px}}
+@media (min-width:1024px){.container{max-width:980px}}
+
+.section{padding:56px 0}
+@media (min-width:768px){.section{padding:80px 0}}
+
+.section-head{text-align:center;margin-bottom:36px}
+@media (min-width:768px){.section-head{margin-bottom:56px}}
+
+.eyebrow{
+  display:inline-block;
+  font-size:13px;font-weight:800;
+  color:var(--blue);
+  margin-bottom:12px;
+  letter-spacing:1.2px;
+}
+.section-title{
+  font-size:26px;
+  font-weight:900;
+  letter-spacing:-0.9px;
+  line-height:1.32;
+  color:var(--text);
+}
+@media (min-width:768px){.section-title{font-size:34px}}
+.section-title .ac-b{color:var(--blue)}
+.section-title .ac-g{color:var(--green)}
+.section-sub{
+  margin-top:14px;
+  font-size:15px;
+  color:var(--text-sub);
+  line-height:1.7;
+  font-weight:500;
+}
+@media (min-width:768px){.section-sub{font-size:17px;margin-top:18px}}
+
+/* ============================================================
+   Header (sticky)
+============================================================ */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line-soft);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;
+}
+@media (min-width:768px){.header-inner{height:68px}}
+.logo-link{display:flex;align-items:center;padding:6px 4px;margin:-6px -4px}
+.logo-img{height:26px;width:auto}
+@media (min-width:768px){.logo-img{height:30px}}
+.header-cta{
+  display:inline-flex;align-items:center;gap:4px;
+  min-height:40px;
+  padding:0 16px;
+  background:var(--blue);color:#fff;
+  border-radius:999px;
+  font-size:13px;font-weight:800;
+  white-space:nowrap;
+  letter-spacing:-.2px;
+  box-shadow:0 3px 10px rgba(0,119,190,.28);
+  transition:transform .15s;
+}
+.header-cta:active{transform:scale(.96)}
+@media (min-width:768px){
+  .header-cta{padding:0 20px;min-height:44px;font-size:14px}
+}
+
+/* ============================================================
+   Hero — 금액 강조형
+============================================================ */
+.hero{
+  position:relative;
+  padding:44px 0 56px;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(0,119,190,.09) 0%, transparent 55%),
+    radial-gradient(circle at 10% 95%, rgba(77,173,62,.08) 0%, transparent 55%),
+    linear-gradient(180deg,#F8FBFF 0%,#FFFFFF 100%);
+  overflow:hidden;
+  text-align:center;
+}
+@media (min-width:768px){.hero{padding:80px 0 88px}}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;
+  background:#fff;
+  border:1.5px solid var(--line);
+  border-radius:999px;
+  font-size:12.5px;font-weight:700;
+  color:var(--text);
+  margin-bottom:22px;
+  box-shadow:var(--shadow-sm);
+  letter-spacing:-.1px;
+}
+@media (min-width:768px){
+  .hero-badge{font-size:14px;padding:10px 18px;margin-bottom:28px}
+}
+.hero-badge .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--green);
+  display:inline-block;
+  box-shadow:0 0 0 3px rgba(63,160,48,.18);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(63,160,48,.18)}
+  50%{box-shadow:0 0 0 6px rgba(63,160,48,0)}
+}
+.hero h1{
+  font-size:30px;
+  font-weight:900;
+  line-height:1.25;
+  letter-spacing:-1.3px;
+  color:var(--text);
+  margin-bottom:18px;
+}
+@media (min-width:500px){.hero h1{font-size:34px}}
+@media (min-width:768px){.hero h1{font-size:48px;margin-bottom:24px;line-height:1.2}}
+.hero h1 .hl{
+  background:linear-gradient(180deg,transparent 58%,rgba(122,189,52,.42) 58%);
+  padding:0 3px;
+}
+.hero h1 .amt{
+  color:var(--blue);
+  font-weight:900;
+}
+.hero-amount-box{
+  display:inline-block;
+  margin:6px 0 22px;
+  padding:14px 24px;
+  background:#fff;
+  border:2px solid var(--blue);
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,119,190,.12);
+}
+.hero-amount-box .label{
+  display:block;
+  font-size:12px;
+  color:var(--text-sub);
+  font-weight:700;
+  letter-spacing:.4px;
+  margin-bottom:4px;
+}
+.hero-amount-box .value{
+  display:block;
+  font-size:28px;
+  font-weight:900;
+  color:var(--blue);
+  letter-spacing:-1.2px;
+  line-height:1.1;
+}
+.hero-amount-box .value .unit{
+  font-size:16px;
+  color:var(--text-sub);
+  font-weight:700;
+  margin-left:3px;
+}
+@media (min-width:768px){
+  .hero-amount-box{padding:18px 32px}
+  .hero-amount-box .label{font-size:13px}
+  .hero-amount-box .value{font-size:34px}
+}
+.hero-desc{
+  font-size:15px;
+  color:var(--text-sub);
+  line-height:1.7;
+  max-width:520px;
+  margin:0 auto 28px;
+  font-weight:500;
+}
+.hero-desc strong{color:var(--text);font-weight:800}
+@media (min-width:768px){.hero-desc{font-size:18px;margin-bottom:36px}}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:60px;
+  padding:0 32px;
+  background:var(--blue);
+  color:#fff;
+  border-radius:999px;
+  font-size:17px;
+  font-weight:800;
+  box-shadow:0 10px 24px rgba(0,119,190,.32);
+  transition:all .2s;
+  letter-spacing:-.3px;
+  width:100%;
+  max-width:320px;
+  justify-content:center;
+}
+.hero-cta:active{transform:translateY(1px);box-shadow:0 6px 14px rgba(0,119,190,.28)}
+@media (min-width:768px){
+  .hero-cta{font-size:19px;min-height:64px;padding:0 44px}
+  .hero-cta:hover{background:var(--blue-dk);transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,119,190,.4)}
+}
+.hero-cta .arrow{transition:transform .25s}
+.hero-cta:active .arrow{transform:translateX(3px)}
+
+.hero-trust{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px 14px;
+  max-width:440px;
+  margin:38px auto 0;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+@media (min-width:600px){
+  .hero-trust{grid-template-columns:repeat(4,1fr);max-width:640px;padding-top:36px}
+}
+.trust-item{text-align:center}
+.trust-num{
+  display:block;
+  font-size:18px;
+  font-weight:900;
+  color:var(--blue);
+  line-height:1.2;
+  margin-bottom:5px;
+  letter-spacing:-.3px;
+}
+@media (min-width:768px){.trust-num{font-size:22px}}
+.trust-label{
+  font-size:12px;
+  color:var(--text-sub);
+  font-weight:600;
+}
+@media (min-width:768px){.trust-label{font-size:13px}}
+
+/* ============================================================
+   Benefits — 대표 지원금
+============================================================ */
+.benefits{background:#fff}
+.benefits-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+@media (min-width:600px){.benefits-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media (min-width:1024px){.benefits-grid{grid-template-columns:repeat(4,1fr)}}
+.benefit-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:26px 22px;
+  transition:all .25s;
+  position:relative;
+}
+.benefit-card:active{transform:scale(.99);border-color:var(--blue)}
+@media (min-width:768px){
+  .benefit-card{padding:32px 26px}
+  .benefit-card:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+}
+.benefit-tag{
+  display:inline-block;
+  padding:5px 12px;
+  background:var(--bg-tint);
+  color:var(--blue);
+  border-radius:999px;
+  font-size:12px;font-weight:800;
+  margin-bottom:14px;
+  letter-spacing:.3px;
+}
+.benefit-card h3{
+  font-size:18px;
+  font-weight:900;
+  color:var(--text);
+  line-height:1.35;
+  margin-bottom:14px;
+  letter-spacing:-.4px;
+}
+@media (min-width:768px){.benefit-card h3{font-size:20px;min-height:56px}}
+.benefit-amount-label{
+  display:block;
+  font-size:12px;
+  color:var(--text-mute);
+  font-weight:700;
+  margin-bottom:4px;
+}
+.benefit-amount{
+  font-size:26px;
+  font-weight:900;
+  color:var(--blue);
+  line-height:1.1;
+  margin-bottom:16px;
+  letter-spacing:-.8px;
+}
+.benefit-amount .unit{
+  font-size:15px;
+  color:var(--text-sub);
+  font-weight:800;
+  margin-left:3px;
+}
+@media (min-width:768px){.benefit-amount{font-size:30px}}
+.benefit-card p{
+  font-size:13.5px;
+  color:var(--text-sub);
+  line-height:1.65;
+  padding-top:14px;
+  border-top:1px dashed var(--line);
+  font-weight:500;
+}
+@media (min-width:768px){.benefit-card p{font-size:14.5px}}
+
+/* ============================================================
+   Cases — 실제 환급 사례
+============================================================ */
+.cases{background:var(--bg-soft)}
+.cases-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+@media (min-width:600px){.cases-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+.case-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:24px 20px;
+  text-align:center;
+  transition:all .25s;
+}
+@media (min-width:768px){
+  .case-card{padding:30px 24px}
+  .case-card:hover{border-color:var(--green);box-shadow:0 10px 28px rgba(77,173,62,.12);transform:translateY(-3px)}
+}
+.case-industry{
+  display:inline-block;
+  padding:5px 14px;
+  background:var(--bg-green-tint);
+  color:var(--green);
+  border-radius:999px;
+  font-size:12px;font-weight:800;
+  margin-bottom:14px;
+  letter-spacing:.2px;
+}
+.case-info{
+  font-size:13px;
+  color:var(--text-sub);
+  margin-bottom:18px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line-soft);
+  font-weight:500;
+  line-height:1.5;
+}
+.case-info strong{
+  display:block;
+  color:var(--text);
+  font-size:15px;
+  font-weight:800;
+  margin-bottom:4px;
+  letter-spacing:-.2px;
+}
+.case-amount-label{
+  font-size:12.5px;
+  color:var(--text-sub);
+  margin-bottom:8px;
+  font-weight:600;
+}
+.case-amount{
+  font-size:26px;
+  font-weight:900;
+  color:var(--blue);
+  letter-spacing:-.8px;
+  line-height:1.1;
+}
+.case-amount .unit{
+  font-size:15px;
+  color:var(--text-sub);
+  font-weight:800;
+  margin-left:3px;
+}
+@media (min-width:768px){.case-amount{font-size:32px}}
+
+/* ============================================================
+   Steps — 4단계 프로세스
+============================================================ */
+.steps{background:#fff}
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px 14px;
+  position:relative;
+}
+@media (min-width:1024px){.steps-grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.step-card{
+  text-align:center;
+  padding:0 2px;
+  position:relative;
+}
+.step-num{
+  width:52px;height:52px;
+  margin:0 auto 14px;
+  border-radius:50%;
+  background:var(--bg-tint);
+  color:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:900;
+  transition:all .25s;
+}
+@media (min-width:768px){.step-num{width:64px;height:64px;font-size:24px;margin-bottom:18px}}
+.step-card h4{
+  font-size:16px;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:8px;
+  letter-spacing:-.3px;
+}
+@media (min-width:768px){.step-card h4{font-size:18px;margin-bottom:10px}}
+.step-card p{
+  font-size:13px;
+  color:var(--text-sub);
+  line-height:1.6;
+  font-weight:500;
+}
+@media (min-width:768px){.step-card p{font-size:14px}}
+
+/* ============================================================
+   Problem (compact)
+============================================================ */
+.problem{background:var(--bg-soft)}
+.problem-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  max-width:560px;
+  margin:0 auto;
+}
+@media (min-width:768px){.problem-list{grid-template-columns:repeat(3,1fr);gap:14px;max-width:100%}}
+.problem-item{
+  background:#fff;
+  padding:18px 18px 18px 56px;
+  border-radius:var(--radius-md);
+  border:1px solid var(--line);
+  position:relative;
+  font-size:14.5px;
+  font-weight:600;
+  color:var(--text);
+  line-height:1.5;
+  letter-spacing:-.2px;
+}
+@media (min-width:768px){
+  .problem-item{padding:22px 22px 22px 66px;font-size:15px;text-align:left}
+}
+.problem-item::before{
+  content:attr(data-icon);
+  position:absolute;
+  left:14px;top:50%;
+  transform:translateY(-50%);
+  width:32px;height:32px;
+  border-radius:10px;
+  background:var(--bg-tint);
+  color:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;
+}
+@media (min-width:768px){
+  .problem-item::before{left:18px;width:38px;height:38px;font-size:18px}
+}
+
+/* ============================================================
+   FAQ (compact accordion)
+============================================================ */
+.faq{background:#fff}
+.faq-list{max-width:640px;margin:0 auto}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  margin-bottom:8px;
+  overflow:hidden;
+  transition:border-color .2s;
+}
+.faq-item.active{border-color:var(--blue)}
+.faq-q{
+  width:100%;
+  padding:16px 18px;
+  text-align:left;
+  font-size:14.5px;
+  font-weight:800;
+  color:var(--text);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;
+  line-height:1.45;
+  letter-spacing:-.2px;
+  min-height:54px;
+}
+@media (min-width:768px){.faq-q{padding:20px 24px;font-size:16px}}
+.faq-q-inner{display:flex;align-items:flex-start;gap:8px;flex:1;min-width:0}
+.faq-q-label{
+  flex-shrink:0;
+  color:var(--blue);
+  font-weight:900;
+}
+.faq-q-text{flex:1}
+.faq-toggle{
+  flex-shrink:0;
+  width:24px;height:24px;
+  border-radius:50%;
+  background:var(--bg-soft);
+  color:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:14px;
+  transition:all .25s;
+}
+.faq-item.active .faq-toggle{
+  background:var(--blue);color:#fff;
+  transform:rotate(45deg);
+}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.active .faq-a{max-height:500px}
+.faq-a-inner{
+  padding:0 18px 18px 38px;
+  font-size:13.5px;
+  color:var(--text-sub);
+  line-height:1.7;
+  font-weight:500;
+}
+@media (min-width:768px){
+  .faq-a-inner{padding:0 24px 22px 56px;font-size:14.5px}
+}
+.faq-a-inner strong{color:var(--text);font-weight:700}
+
+/* ============================================================
+   Form
+============================================================ */
+.form-section{
+  background:linear-gradient(180deg,#F8FBFF 0%,#EEF5FC 100%);
+  padding:56px 0 72px;
+}
+@media (min-width:768px){.form-section{padding:80px 0 100px}}
+.form-wrap{
+  max-width:520px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-xl);
+  padding:28px 22px;
+  box-shadow:0 16px 48px rgba(0,119,190,.1);
+}
+@media (min-width:768px){.form-wrap{padding:44px 40px}}
+.form-badges{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.form-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:6px 12px;
+  background:var(--bg-tint);
+  color:var(--blue);
+  border-radius:999px;
+  font-size:12.5px;
+  font-weight:800;
+}
+.form-wrap .form-title{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.7px;
+  line-height:1.3;
+  color:var(--text);
+  text-align:center;
+  margin-bottom:10px;
+}
+.form-wrap .form-title .ac{color:var(--blue)}
+@media (min-width:768px){.form-wrap .form-title{font-size:28px}}
+.form-wrap .form-sub{
+  text-align:center;
+  font-size:13.5px;
+  color:var(--text-sub);
+  line-height:1.6;
+  margin-bottom:24px;
+  font-weight:500;
+}
+@media (min-width:768px){.form-wrap .form-sub{font-size:15px;margin-bottom:32px}}
+.form-field{margin-bottom:16px}
+.form-field label{
+  display:block;
+  font-size:13.5px;
+  font-weight:800;
+  color:var(--text);
+  margin-bottom:7px;
+  letter-spacing:-.1px;
+}
+.form-field label .req{color:var(--danger);margin-left:2px}
+.form-field label .opt{
+  color:var(--text-mute);
+  font-weight:500;
+  font-size:11.5px;
+  margin-left:4px;
+}
+.form-field input{
+  width:100%;
+  min-height:52px;
+  padding:14px 16px;
+  font-size:16px;
+  font-weight:500;
+  color:var(--text);
+  background:#fff;
+  border:1.5px solid var(--line);
+  border-radius:12px;
+  transition:all .18s;
+  -webkit-appearance:none;
+}
+.form-field input::placeholder{color:var(--text-mute)}
+.form-field input:focus{
+  outline:none;
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px rgba(0,119,190,.1);
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+@media (min-width:560px){.form-row{grid-template-columns:1fr 1fr;gap:12px}}
+.form-row .form-field{margin-bottom:0}
+@media (min-width:560px){.form-row + .form-field{margin-top:14px}}
+
+.agree-box{
+  margin-top:14px;
+  padding:14px 16px;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  border-radius:12px;
+}
+.agree-check{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13.5px;
+  color:var(--text);
+  font-weight:600;
+  cursor:pointer;
+  line-height:1.5;
+}
+.agree-check input[type=checkbox]{
+  width:20px;height:20px;
+  margin-top:1px;
+  accent-color:var(--blue);
+  flex-shrink:0;
+  cursor:pointer;
+}
+.agree-check .req{color:var(--danger);font-weight:700}
+.agree-detail{
+  margin-top:10px;
+  padding:12px 14px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  font-size:11.5px;
+  color:var(--text-sub);
+  line-height:1.7;
+  max-height:120px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.agree-detail strong{color:var(--text)}
+.form-submit{
+  width:100%;
+  min-height:60px;
+  padding:18px;
+  font-size:17px;
+  font-weight:800;
+  color:#fff;
+  background:var(--blue);
+  border-radius:14px;
+  margin-top:20px;
+  transition:all .2s;
+  box-shadow:0 10px 24px rgba(0,119,190,.3);
+  letter-spacing:-.3px;
+}
+.form-submit:active{transform:translateY(1px);box-shadow:0 6px 14px rgba(0,119,190,.25)}
+@media (min-width:768px){
+  .form-submit{font-size:18px;min-height:64px}
+  .form-submit:hover{background:var(--blue-dk);transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,119,190,.38)}
+}
+.form-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.form-footer{
+  text-align:center;
+  margin-top:16px;
+  font-size:12.5px;
+  color:var(--text-sub);
+  line-height:1.75;
+  font-weight:500;
+}
+.form-footer .check{color:var(--green);font-weight:900;margin-right:2px}
+
+/* ============================================================
+   Form-flow highlight (submit -> diagnosis page)
+============================================================ */
+.form-flow{
+  margin-top:18px;
+  padding:16px 18px;
+  background:linear-gradient(180deg, #EBF6FC 0%, #D9EDF9 100%);
+  border:1.5px solid var(--blue);
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-weight:700;
+  color:var(--blue-dk, #005A8F);
+  font-size:14.5px;
+  letter-spacing:-.2px;
+  box-shadow:0 4px 14px rgba(0,119,190,.12);
+}
+.form-flow-text{
+  word-break:keep-all;
+  overflow-wrap:break-word;
+  line-height:1.55;
+}
+.form-flow-arrow{
+  display:inline-block;
+  font-size:18px;
+  font-weight:900;
+  color:var(--blue);
+  animation:form-flow-bounce 1.8s ease-in-out infinite;
+}
+@keyframes form-flow-bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(4px)}
+}
+@media (prefers-reduced-motion: reduce){
+  .form-flow-arrow{animation:none}
+}
+@media (min-width:768px){
+  .form-flow{font-size:16px;padding:18px 22px}
+  .form-flow-arrow{font-size:20px}
+}
+.btn-arrow{display:inline-block;margin-left:6px;font-weight:900}
+
+
+/* ============================================================
+   Footer
+============================================================ */
+.footer{
+  background:#0F172A;
+  color:rgba(255,255,255,.65);
+  padding:36px 0 28px;
+  font-size:13px;
+}
+.footer-inner{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-bottom:20px;
+}
+@media (min-width:768px){
+  .footer-inner{flex-direction:row;justify-content:space-between;align-items:center;gap:24px;padding-bottom:24px;margin-bottom:24px}
+}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-logo-img{height:24px;width:auto;filter:brightness(0) invert(1)}
+.footer-home-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12.5px;
+  color:rgba(255,255,255,.85);
+  font-weight:700;
+  padding:6px 12px;
+  background:rgba(255,255,255,.08);
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.15);
+  transition:background .2s;
+}
+.footer-home-link:active{background:rgba(255,255,255,.14)}
+.footer-info{
+  font-size:12px;
+  line-height:1.7;
+  color:rgba(255,255,255,.55);
+}
+.footer-info strong{color:rgba(255,255,255,.85)}
+.footer-bottom{
+  margin-top:14px;
+  font-size:11px;
+  color:rgba(255,255,255,.35);
+}
+
+/* ============================================================
+   Floating Mobile CTA
+============================================================ */
+.floating-cta{
+  position:fixed;
+  bottom:12px;left:12px;right:12px;
+  z-index:90;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.floating-cta button{
+  width:100%;
+  min-height:58px;
+  font-size:16px;
+  font-weight:800;
+  color:#fff;
+  background:linear-gradient(90deg,var(--blue) 0%,var(--blue-lt) 100%);
+  border-radius:14px;
+  box-shadow:0 10px 26px rgba(0,119,190,.42);
+  letter-spacing:-.3px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.floating-cta button:active{transform:translateY(1px)}
+@media (min-width:1024px){
+  body{padding-bottom:0}
+  .floating-cta{display:none}
+}
+
+/* ============================================================
+   Utility
+============================================================ */
+.no-wrap{white-space:nowrap}
+@media (max-width:400px){.no-wrap{white-space:normal}}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     Header
+============================================================ -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="https://goyongeeum.kr/" target="_blank" rel="noopener" class="logo-link" aria-label="고용이음 홈페이지 새창으로 열기">
+      <img id="brandLogo" alt="고용이음" class="logo-img">
+    </a>
+    <a href="https://taxpartner.kr/new/selectType?managerID=11144" class="header-cta" rel="noopener">1분 무료 진단 →</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     Hero
+============================================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      로그인 X · 서류 X · 비용 X · 딱 1분
+    </div>
+    <h1>
+      사장님이 놓치고 있는<br>
+      <span class="hl">고용지원금</span>
+    </h1>
+    <div class="hero-amount-box">
+      <span class="label">최대 환급 가능 금액</span>
+      <span class="value">5,000<span class="unit">만원+</span></span>
+    </div>
+    <p class="hero-desc">
+      이름과 연락처만 남겨주시면,<br>
+      우리 회사가 받을 수 있는 지원금을 <strong>1분 안에 무료</strong>로 확인해드립니다.
+    </p>
+    <a href="#apply" class="hero-cta">
+      1분 무료 진단받기 <span class="arrow">→</span>
+    </a>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <span class="trust-num">최대 5년</span>
+        <span class="trust-label">소급 환급</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">1분</span>
+        <span class="trust-label">무료 진단</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">서류 0</span>
+        <span class="trust-label">진단 시 서류 X</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">비용 0</span>
+        <span class="trust-label">진단·상담 무료</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Benefits — 대표 지원금
+============================================================ -->
+<section class="section benefits" id="benefits">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">정부지원사업</div>
+      <h2 class="section-title">받으실 수 있는 <span class="ac-b">대표 지원금</span></h2>
+      <p class="section-sub">고용이음이 전문으로 다루는 핵심 고용지원금입니다.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-tag">청년 고용</span>
+        <h3>청년일자리<br>도약장려금</h3>
+        <span class="benefit-amount-label">청년 1인당 최대</span>
+        <div class="benefit-amount">1,200<span class="unit">만원</span></div>
+        <p>만 15~34세 청년을 정규직으로 채용한 기업 대상. 청년과 기업 모두에게 혜택이 돌아갑니다.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-tag">세액공제</span>
+        <h3>통합고용<br>세액공제</h3>
+        <span class="benefit-amount-label">증가 인원 1명당 최대</span>
+        <div class="benefit-amount">1,550<span class="unit">만원</span></div>
+        <p>상시근로자가 증가한 기업에 3년간 세액공제. 경정청구로 소급 환급도 가능합니다.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-tag">사회보험</span>
+        <h3>두루누리<br>사회보험 지원</h3>
+        <span class="benefit-amount-label">보험료 최대</span>
+        <div class="benefit-amount">80<span class="unit">%</span></div>
+        <p>10인 미만 사업장의 저임금 근로자 국민연금·고용보험료를 매월 지원합니다.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-tag">고령·경력단절</span>
+        <h3>고령자·경력단절<br>고용지원금</h3>
+        <span class="benefit-amount-label">연 최대</span>
+        <div class="benefit-amount">720<span class="unit">만원</span></div>
+        <p>60세 이상 또는 경력단절여성을 채용한 기업에 주어지는 고용 장려 혜택입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Cases — 실제 환급 사례
+============================================================ -->
+<section class="section cases">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">CASE</div>
+      <h2 class="section-title">실제 <span class="ac-g">환급 사례</span></h2>
+      <p class="section-sub">고용이음을 통해 실제로 지원금을 받은 사례입니다.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <span class="case-industry">제조업</span>
+        <div class="case-info"><strong>A 제조업체</strong>상시근로자 18명 · 법인사업자</div>
+        <div class="case-amount-label">통합고용세액공제 소급 환급</div>
+        <div class="case-amount">4,200<span class="unit">만원</span></div>
+      </div>
+      <div class="case-card">
+        <span class="case-industry">서비스업</span>
+        <div class="case-info"><strong>B 서비스업</strong>상시근로자 9명 · 개인사업자</div>
+        <div class="case-amount-label">청년일자리도약장려금 수령</div>
+        <div class="case-amount">2,880<span class="unit">만원</span></div>
+      </div>
+      <div class="case-card">
+        <span class="case-industry">도소매업</span>
+        <div class="case-info"><strong>C 유통회사</strong>상시근로자 25명 · 법인사업자</div>
+        <div class="case-amount-label">통합고용세액공제 + 두루누리</div>
+        <div class="case-amount">6,750<span class="unit">만원</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Steps — 4단계 프로세스
+============================================================ -->
+<section class="section steps">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">PROCESS</div>
+      <h2 class="section-title">진행은 <span class="ac-b">딱 4단계</span>면 끝</h2>
+      <p class="section-sub">복잡한 서류 걱정 없이 고용이음이 처음부터 끝까지 함께합니다.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>1분 무료 진단</h4>
+        <p>이름·연락처만 남기면 담당자가 직접 연락드립니다.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>전문가 상담</h4>
+        <p>회사 상황에 맞는 지원금과 예상 환급액을 안내드립니다.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>서류 준비·제출</h4>
+        <p>필요 서류는 고용이음이 직접 작성·제출까지 대행합니다.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>환급·수령</h4>
+        <p>승인 완료 후 지원금 입금. 성공 시에만 수수료가 발생합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Problem — compact
+============================================================ -->
+<section class="section problem">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">WHY</div>
+      <h2 class="section-title">혹시 이런 <span class="ac-b">고민</span> 있으신가요?</h2>
+    </div>
+    <ul class="problem-list">
+      <li class="problem-item" data-icon="?">어떤 지원금이 있는지 몰라서 놓치고 있다.</li>
+      <li class="problem-item" data-icon="!">신청 절차가 너무 복잡해 포기한 경험이 있다.</li>
+      <li class="problem-item" data-icon="₩">이미 받을 수 있었던 돈을 모르고 지나쳤다.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ — compact accordion
+============================================================ -->
+<section class="section faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="section-title">자주 묻는 <span class="ac-b">질문</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-q-inner"><span class="faq-q-label">Q.</span><span class="faq-q-text">정말 조회가 무료인가요?</span></span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">네, 진단과 상담은 <strong>전액 무료</strong>입니다. 실제 환급이 완료된 경우에만 사전 약정한 성공 수수료가 발생합니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-q-inner"><span class="faq-q-label">Q.</span><span class="faq-q-text">과거 연도 지원금도 받을 수 있나요?</span></span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">통합고용세액공제 등은 경정청구를 통해 <strong>최대 5년까지 소급 환급</strong>이 가능합니다. 놓친 지원금이 있는지부터 확인해드립니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-q-inner"><span class="faq-q-label">Q.</span><span class="faq-q-text">개인사업자도 신청할 수 있나요?</span></span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">법인·개인사업자 모두 가능합니다. 사업 형태에 맞는 최적의 지원금을 안내드립니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-q-inner"><span class="faq-q-label">Q.</span><span class="faq-q-text">기존 거래처가 있어도 가능한가요?</span></span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">가능합니다. 고용지원금·경정청구 컨설팅만 별도로 진행할 수 있어, 기존 거래 관계에 영향을 주지 않습니다.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-q-inner"><span class="faq-q-label">Q.</span><span class="faq-q-text">진단만 받고 진행 안 해도 되나요?</span></span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">네, 전혀 부담 갖지 마세요. 결과 확인 후 <strong>진행 여부는 자유롭게 선택</strong>하시면 됩니다. 진단·상담 단계에서는 어떤 비용도 발생하지 않습니다.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Form — 1분 무료 진단 신청
+============================================================ -->
+<section class="form-section" id="apply">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="form-badges">
+        <span class="form-badge">✓ 로그인 없이</span>
+        <span class="form-badge">✓ 서류 없이</span>
+        <span class="form-badge">✓ 비용 없이</span>
+      </div>
+      <h2 class="form-title">1분이면 끝나는 <span class="ac">무료 진단</span></h2>
+      <p class="form-sub">이름과 연락처만 남겨주시면<br>진단 결과 페이지로 바로 연결해드립니다.</p>
+
+      <form id="applyForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">이름 <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="사장님 또는 담당자 성함" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">연락처 <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" inputmode="numeric" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="company">회사명 / 상호 <span class="opt">(선택)</span></label>
+          <input type="text" id="company" name="company" autocomplete="organization">
+        </div>
+
+        <div class="agree-box">
+          <label class="agree-check">
+            <input type="checkbox" id="agree" required checked>
+            <span><span class="req">[필수]</span> 개인정보 수집·이용에 동의합니다.</span>
+          </label>
+          <div class="agree-detail">
+            <strong>개인정보 수집·이용 동의</strong><br>
+            • 수집항목: 이름, 연락처, (선택) 회사명<br>
+            • 수집목적: 고용지원금 무료 진단 결과 안내 및 상담<br>
+            • 보유기간: 상담 완료 후 1년 (관련 법령에 따름)<br>
+            • 동의 거부 시 진단 결과 안내가 제한될 수 있습니다.
+          </div>
+        </div>
+
+        <button type="submit" class="form-submit" id="submitBtn">지원금 확인하기 <span class="btn-arrow" aria-hidden="true">→</span></button>
+        <div class="form-flow" role="note" aria-label="제출 후 진단 페이지 자동 연결 안내">
+          <span class="form-flow-text">제출 즉시 진단페이지로 자동 연결됩니다</span>
+          <span class="form-flow-arrow" aria-hidden="true">↓</span>
+        </div>
+        <p class="form-footer">
+          <span class="check">✓</span>언제든지 부담 없이 거절하실 수 있습니다
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Footer
+============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img id="footerLogo" alt="고용이음" class="footer-logo-img">
+      </div>
+      <a href="https://goyongeeum.kr/" target="_blank" rel="noopener" class="footer-home-link">
+        고용이음 홈페이지 →
+      </a>
+    </div>
+    <div class="footer-info">
+      <strong>고용이음</strong> · 고용지원금 무료 진단 서비스<br>
+      본 페이지의 지원금 금액·요건은 정책 변동에 따라 달라질 수 있으며, 실제 적용 여부는 진단 상담 후 확정됩니다.
+    </div>
+    <div class="footer-bottom">© 2026 고용이음. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Floating Mobile CTA
+============================================================ -->
+<div class="floating-cta" id="floatingCta">
+  <button type="button" aria-label="1분 무료 진단 신청 폼으로 이동">
+    <span>지원금 확인하기</span> <span>→</span>
+  </button>
+</div>
+
+<script>
+/* ============================================================
+   🔧 설정
+============================================================ */
+const LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyOFw6FI15Ecj4CjQezODwkn2VltHaoR9j-HUP0-7KSRYcE0qIgv2I0vlGPMb6RNj1w/exec';
+const REDIRECT_URL = 'https://taxpartner.kr/new/selectType?managerID=11144';
+
+/* ============================================================
+   로고 Base64 임베드
+============================================================ */
+const LOGO_DATA_URI = "data:image/png;base64,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";
+(function setLogo(){
+  const brand = document.getElementById('brandLogo');
+  const footer = document.getElementById('footerLogo');
+  if(brand) brand.src = LOGO_DATA_URI;
+  if(footer) footer.src = LOGO_DATA_URI;
+})();
+
+/* ============================================================
+   FAQ 아코디언
+============================================================ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const opening = !item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      const q = i.querySelector('.faq-q');
+      if(q) q.setAttribute('aria-expanded', 'false');
+    });
+    if(opening){
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ============================================================
+   연락처 자동 하이픈
+============================================================ */
+document.getElementById('phone').addEventListener('input', function(e){
+  let v = e.target.value.replace(/[^0-9]/g,'');
+  if(v.length < 4) e.target.value = v;
+  else if(v.length < 8) e.target.value = v.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+  else e.target.value = v.replace(/(\d{3})(\d{3,4})(\d{1,4})/, '$1-$2-$3').slice(0,13);
+});
+
+/* ============================================================
+   Floating CTA → 폼으로 스크롤
+============================================================ */
+document.querySelector('#floatingCta button').addEventListener('click', () => {
+  document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
+  setTimeout(()=>{ const n = document.getElementById('name'); if(n) n.focus({preventScroll:true}); }, 600);
+});
+
+/* ============================================================
+   폼 제출 → 웹훅 전송 → taxpartner.kr 리다이렉트
+============================================================ */
+document.getElementById('applyForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const agree = document.getElementById('agree').checked;
+
+  if(!name){ alert('이름을 입력해주세요.'); return; }
+  const phoneDigits = phone.replace(/[^0-9]/g,'');
+  if(!phone || phoneDigits.length < 10){ alert('올바른 연락처를 입력해주세요.'); return; }
+  if(!agree){ alert('개인정보 수집·이용에 동의해주세요.'); return; }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = '진단 페이지로 이동 중...';
+
+  /* 1) 웹훅 백그라운드 전송 (페이지 이동에도 안정적) */
+  if(LEAD_WEBHOOK_URL){
+    try{
+      const payload = new FormData();
+      payload.append('name', name);
+      payload.append('phone', phone);
+      payload.append('company', company || '(미입력)');
+      payload.append('source', 'goyongeum_landing_v4_mobile');
+      payload.append('submittedAt', new Date().toISOString());
+      if(navigator.sendBeacon){
+        navigator.sendBeacon(LEAD_WEBHOOK_URL, payload);
+      } else {
+        fetch(LEAD_WEBHOOK_URL, {method:'POST', body:payload, keepalive:true, mode:'no-cors'});
+      }
+    } catch(err){ console.warn('lead send failed:', err); }
+  }
+
+  /* 2) 로컬 백업 */
+  try{
+    const leads = JSON.parse(localStorage.getItem('goyongeum_leads') || '[]');
+    leads.push({name, phone, company, at:new Date().toISOString()});
+    localStorage.setItem('goyongeum_leads', JSON.stringify(leads));
+  } catch(e){}
+
+  /* 3) 진단 페이지 리다이렉트 */
+  setTimeout(()=>{ window.location.href = REDIRECT_URL; }, 250);
+});
+</script>
+
+</body>
+</html>
