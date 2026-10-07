@@ -1297,7 +1297,7 @@ document.getElementById('applyForm').addEventListener('submit', function(e){
       payload.append('name', name);
       payload.append('phone', phone);
       payload.append('company', company || '(미입력)');
-      payload.append('source', 'goyongeum_landing_v4_mobile');
+      payload.append('source', 'goyongeum_' + ((REDIRECT_URL.match(/managerID=([0-9]+)/) || [])[1] || 'unknown'));
       payload.append('submittedAt', new Date().toISOString());
       if(navigator.sendBeacon){
         navigator.sendBeacon(LEAD_WEBHOOK_URL, payload);
